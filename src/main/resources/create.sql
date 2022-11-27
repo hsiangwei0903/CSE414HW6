@@ -24,6 +24,8 @@ CREATE TABLE Patients (
     PRIMARY KEY (Username)
 );
 
+--note that the Schedule.py can filter out invalid creation of appointment so we can skip foreign key constraint here
+
 CREATE TABLE Appointments (
     appointmentID int,
     Time date,
