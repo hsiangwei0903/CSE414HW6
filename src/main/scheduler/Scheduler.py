@@ -16,6 +16,16 @@ current_patient = None
 current_caregiver = None
 
 # Extra Bonus: add guidelines for strong password 
+def checkString(str):
+    letter = False
+    number = False
+    for i in str:
+        if i.isalpha():
+            letter = True
+        if i.isdigit():
+            number = True
+    return letter and number
+
 def valid_password(password):
     if len(password)<8:
         print('password should be at least 8 characters long.')
@@ -25,6 +35,9 @@ def valid_password(password):
         return False
     if not any(c in '!@#?' for c in password):
         print('password should contain at least one special character from !@#?.')
+        return False
+    if not checkString(password):
+        print('password should contain at least one number and one letter.')
         return False
     return True
 
